@@ -194,14 +194,16 @@ MainWindow::~MainWindow()
 void MainWindow::updateWindowTitle()
 {
     if (filename.isEmpty())
-        setWindowTitle(QString("%1 (%2)")
+        setWindowTitle(QString("%1 (%2:%3)")
                 .arg(APP_NAME)
-                .arg(mapData->getAlsaClientId()));
+                .arg(mapData->getAlsaClientId())
+                .arg(mapData->getAlsaClientName()));
     else
-        setWindowTitle(QString("%1 - %2 (%3)")
+        setWindowTitle(QString("%1 - %2 (%3:%4)")
                 .arg(filename)
                 .arg(APP_NAME)
-                .arg(mapData->getAlsaClientId()));
+                .arg(mapData->getAlsaClientId())
+                .arg(mapData->getAlsaClientName()));
 }
 
 void MainWindow::helpAbout()

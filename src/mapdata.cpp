@@ -127,3 +127,8 @@ int MapData::getAlsaClientId()
 {
     return seqDriver->getAlsaClientId();
 }
+
+QString MapData::getAlsaClientName()
+{
+    return seqDriver->getAlsaClientName();
+}

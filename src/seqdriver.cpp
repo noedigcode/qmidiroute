@@ -4,7 +4,7 @@
 #include "config.h"
 
 
-SeqDriver::SeqDriver(QList<MidiMap *> *p_midiMapList, QString clientName, QWidget *parent)
+SeqDriver::SeqDriver(QList<MidiMap *> *p_midiMapList, QString p_clientName, QWidget *parent)
     : QWidget(parent), modified(false)
 {
     int err;
@@ -14,6 +14,7 @@ SeqDriver::SeqDriver(QList<MidiMap *> *p_midiMapList, QString clientName, QWidge
     discardUnmatched = true;
     portUnmatched = 0;
     clientid = -1;
+    clientName = p_clientName;
     
     err = snd_seq_open(&seq_handle, "hw", SND_SEQ_OPEN_DUPLEX, 0);
     if (err < 0) {
@@ -139,4 +140,9 @@ bool SeqDriver::isModified()
 int SeqDriver::getAlsaClientId()
 {
     return clientid;
+}
+
+QString SeqDriver::getAlsaClientName()
+{
+    return clientName;
 }

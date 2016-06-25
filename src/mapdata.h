@@ -37,6 +37,7 @@ class MapData : public QWidget  {
     int midiMapCount();
     int mapWidgetCount();
     int getAlsaClientId();
+    QString getAlsaClientName();
     bool isModified();
     void setModified(bool);
     void saveFileText(QTextStream&);

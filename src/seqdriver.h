@@ -22,6 +22,7 @@ class SeqDriver : public QWidget {
     QSocketNotifier *seqNotifier;
     snd_seq_t *seq_handle;
     int clientid;
+    QString clientName;
     int portid_out[MAX_PORTS];
     int portid_in;
     bool modified;
@@ -32,7 +33,7 @@ class SeqDriver : public QWidget {
     bool discardUnmatched;
     int portUnmatched;
 
-    SeqDriver(QList<MidiMap *> *p_midiMapList, QString clientName, QWidget* parent=0);
+    SeqDriver(QList<MidiMap *> *p_midiMapList, QString p_clientName, QWidget* parent=0);
     ~SeqDriver();
     void registerPorts(int num);
     int getPortCount();
@@ -40,6 +41,7 @@ class SeqDriver : public QWidget {
     bool isModified();
     void setModified(bool);
     int getAlsaClientId();
+    QString getAlsaClientName();
 
   signals:
     void midiEvent(snd_seq_event_t *ev);

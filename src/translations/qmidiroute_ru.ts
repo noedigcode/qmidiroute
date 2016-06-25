@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<TS version="2.0" language="ru">
 <context>
     <name>LogWidget</name>
     <message>
@@ -140,7 +140,7 @@
         <translation type="unfinished">&amp;Правило</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="209"/>
+        <location filename="../mainwindow.cpp" line="211"/>
         <source>About %1</source>
         <translation>О %1</translation>
     </message>
@@ -153,18 +153,18 @@
         <translation type="obsolete">Карта %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="308"/>
+        <location filename="../mainwindow.cpp" line="310"/>
         <source>New Name</source>
         <translation>Новое имя</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="324"/>
+        <location filename="../mainwindow.cpp" line="326"/>
         <source>Delete &quot;%1&quot;?</source>
         <translation>Удалить &quot;%1&quot;?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="387"/>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="389"/>
+        <location filename="../mainwindow.cpp" line="440"/>
         <source>QMidiRoute files</source>
         <translation>Файлы QMidiRoute</translation>
     </message>
@@ -219,31 +219,31 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="223"/>
+        <location filename="../mainwindow.cpp" line="225"/>
         <source>Add rule</source>
         <translation type="unfinished">Добавить правило</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="224"/>
+        <location filename="../mainwindow.cpp" line="226"/>
         <source>Rule %1</source>
         <translation type="unfinished">Правило %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="482"/>
+        <location filename="../mainwindow.cpp" line="484"/>
         <source>Unnamed file was changed.
 Save changes?</source>
         <translation>Безымянный файл изменен.
 Сохранить изменения?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="484"/>
+        <location filename="../mainwindow.cpp" line="486"/>
         <source>File &apos;%1&apos; was changed.
 Save changes?</source>
         <translation>Файл &apos;%1&apos; изменен.
 Сохранить изменения?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="488"/>
+        <location filename="../mainwindow.cpp" line="490"/>
         <source>Save changes</source>
         <translation>Сохранить изменения</translation>
     </message>
@@ -253,27 +253,27 @@ Save changes?</source>
         <translation>О &amp;Qt...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="214"/>
+        <location filename="../mainwindow.cpp" line="216"/>
         <source>About Qt</source>
         <translation>О Qt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="404"/>
+        <location filename="../mainwindow.cpp" line="406"/>
         <source>Could not read from file &apos;%1&apos;.</source>
         <translation>Не удалось прочитать файл &apos;%1&apos;.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="465"/>
+        <location filename="../mainwindow.cpp" line="467"/>
         <source>Could not write to file &apos;%1&apos;.</source>
         <translation>Не удалось записать файл &apos;%1&apos;.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="386"/>
+        <location filename="../mainwindow.cpp" line="388"/>
         <source>Open MIDI route map file</source>
         <translation>Открыть файл схемы маршрутизации MIDI</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="437"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Save MIDI route map file</source>
         <translation>Сохранить файл схемы маршрутизации MIDI</translation>
     </message>
