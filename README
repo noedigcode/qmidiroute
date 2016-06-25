@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------
 QMidiRoute (C) 2003 by Matthias Nagorni
 Qt4-port 2009 by Frank Kober
+ALSA client name setting added 2016 by Gideon van der Kolf
 QMidiRoute is released under GNU General Public License (refer to LICENSE file)
 --------------------------------------------------------------------------
 
@@ -15,6 +16,7 @@ QMidiRoute can be started using the following options:
 
    --portCount <num>         Number of Output Ports [2]
    --file <filename>         Open Map File <filename>
+   -c <alsaClientName>       ALSA client name
 
 
 Installation
