@@ -51,7 +51,7 @@ class MainWindow : public QMainWindow
     void closeEvent(QCloseEvent*);
 
   public:
-    MainWindow(int p_portCount);
+    MainWindow(int p_portCount, QString p_alsaClientName);
     ~MainWindow();
 
     QAction *mapCloneAction, *mapNewAction, *mapDeleteAction, *mapRenameAction;

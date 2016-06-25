@@ -10,9 +10,9 @@
 #include "mapdata.h"
 
 
-MapData::MapData(QWidget *parent) : QWidget(parent), modified(false)
+MapData::MapData(QString p_alsaClientName, QWidget *parent) : QWidget(parent), modified(false)
 {
-    seqDriver = new SeqDriver(&midiMapList, this);
+    seqDriver = new SeqDriver(&midiMapList, p_alsaClientName, this);
     // midiMapList.setAutoDelete(true);
 }
 

@@ -15,6 +15,7 @@ static struct option options[] = {
     {"help", 0, 0, 'h'},
     {"version", 0, 0, 'v'},
     {"portCount", 1, 0, 'p'},
+    {"alsaClientName", 1, 0, 'c'},
     {0, 0, 0, 0}
 };
 
@@ -24,9 +25,10 @@ int main(int argc, char *argv[])
     int getopt_return;
     int option_index; 
     int portCount = 2;
+    QString alsaClientName = PACKAGE;
     QTextStream out(stdout);
 
-    while ((getopt_return = getopt_long(argc, argv, "vhp:", options,
+    while ((getopt_return = getopt_long(argc, argv, "vhpc:", options,
                     &option_index)) >= 0) {
         switch(getopt_return) {
             case 'p':
@@ -35,6 +37,9 @@ int main(int argc, char *argv[])
                     portCount = MAX_PORTS;
                 else if (portCount < 1)
                     portCount = 2;
+                break;
+            case 'c':
+                alsaClientName = QString(optarg);
                 break;
             case 'v':
                 out << ABOUTMSG;
@@ -48,8 +53,9 @@ int main(int argc, char *argv[])
                         "Print application version" << endl;
                 out << "  -h, --help                Print this message" << endl;
                 out << QString("  -p, --portCount <num>     "
-                        "Set number of output ports [%1]\n")
+                        "Set number of output ports [%1]")
                     .arg(portCount) << endl;
+                out << "  -c, --alsaClientName <name>" << endl;
                 out.flush();
                 exit(EXIT_SUCCESS);
         }
@@ -71,7 +77,7 @@ int main(int argc, char *argv[])
     if (qmidirouteTr.load(QString(PACKAGE "_") + loc.name(), TRANSLATIONSDIR))
         app.installTranslator(&qmidirouteTr);
 
-    MainWindow* qmidiroute = new MainWindow(portCount);
+    MainWindow* qmidiroute = new MainWindow(portCount, alsaClientName);
     if (optind < argc) {
         QFileInfo fi(argv[optind]);
         if (fi.exists())

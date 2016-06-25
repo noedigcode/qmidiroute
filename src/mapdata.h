@@ -27,7 +27,7 @@ class MapData : public QWidget  {
     MidiMap *midiMap(int index);
     MapWidget *mapWidget(int index);
 
-    MapData(QWidget* parent=0);
+    MapData(QString p_alsaClientName, QWidget* parent=0);
     ~MapData();
     void registerPorts(int num);
     int getPortCount();

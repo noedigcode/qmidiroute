@@ -32,7 +32,7 @@ class SeqDriver : public QWidget {
     bool discardUnmatched;
     int portUnmatched;
 
-    SeqDriver(QList<MidiMap *> *p_midiMapList, QWidget* parent=0);
+    SeqDriver(QList<MidiMap *> *p_midiMapList, QString clientName, QWidget* parent=0);
     ~SeqDriver();
     void registerPorts(int num);
     int getPortCount();

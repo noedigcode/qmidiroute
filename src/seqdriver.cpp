@@ -4,7 +4,7 @@
 #include "config.h"
 
 
-SeqDriver::SeqDriver(QList<MidiMap *> *p_midiMapList, QWidget *parent)
+SeqDriver::SeqDriver(QList<MidiMap *> *p_midiMapList, QString clientName, QWidget *parent)
     : QWidget(parent), modified(false)
 {
     int err;
@@ -20,7 +20,7 @@ SeqDriver::SeqDriver(QList<MidiMap *> *p_midiMapList, QWidget *parent)
         qWarning("Error opening ALSA sequencer (%s).", snd_strerror(err));
         exit(1);
     }
-    snd_seq_set_client_name(seq_handle, PACKAGE);
+    snd_seq_set_client_name(seq_handle, clientName.toLocal8Bit().constData());
     clientid = snd_seq_client_id(seq_handle);
     portid_in = snd_seq_create_simple_port(seq_handle, "in",
                     SND_SEQ_PORT_CAP_WRITE|SND_SEQ_PORT_CAP_SUBS_WRITE,

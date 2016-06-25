@@ -38,12 +38,12 @@ static const char FILEEXT[] = ".qmr";
 
 int MainWindow::sigpipe[2];
 
-MainWindow::MainWindow(int p_portCount)
+MainWindow::MainWindow(int p_portCount,  QString p_alsaClientName)
 {
     filename = "";
     lastDir = QDir::homePath();
 
-    mapData = new MapData(this);
+    mapData = new MapData(p_alsaClientName, this);
     mapData->registerPorts(p_portCount);
 
     tabWidget = new QTabWidget(this);
