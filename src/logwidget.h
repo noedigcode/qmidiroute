@@ -16,6 +16,7 @@ class LogWidget : public QWidget
     QTextEdit *logText;
     QCheckBox *enableLog;
     QCheckBox *logMidiClock;
+    QCheckBox *colorLog;
     QColor textColor;
     bool logActive;
     bool logMidiActive;

@@ -16,6 +16,7 @@ LogWidget::LogWidget(QWidget *parent) : QWidget(parent), lines(0)
 
     logText = new QTextEdit(this);
     logText->setFontFamily("Courier");
+    logText->setFontWeight(QFont::Bold);
     logText->setReadOnly(true);
     textColor = logText->textColor();
     
@@ -33,6 +34,11 @@ LogWidget::LogWidget(QWidget *parent) : QWidget(parent), lines(0)
     QObject::connect(logMidiClock, SIGNAL(toggled(bool)), this,
             SLOT(logMidiToggle(bool)));
     logMidiClock->setChecked(logMidiActive);
+
+    colorLog = new QCheckBox(this);
+    colorLog->setText(tr("&Color Log"));
+    colorLog->setToolTip(tr("Show log events in color"));
+    colorLog->setChecked(false);
     
     QPushButton *clearButton = new QPushButton(tr("&Clear"), this);
     clearButton->setToolTip(tr("Clear all logged MIDI events"));
@@ -41,6 +47,7 @@ LogWidget::LogWidget(QWidget *parent) : QWidget(parent), lines(0)
     QHBoxLayout *buttonBoxLayout = new QHBoxLayout;
     buttonBoxLayout->addWidget(enableLog);
     buttonBoxLayout->addWidget(logMidiClock);
+    buttonBoxLayout->addWidget(colorLog);
     buttonBoxLayout->addStretch(10);
     buttonBoxLayout->addWidget(clearButton);
 
@@ -145,6 +152,9 @@ void LogWidget::appendText(const QString& qs)
         logText->moveCursor(QTextCursor::End);
         logText->setUpdatesEnabled(true);
         lines--;
+    }
+    if (!colorLog->isChecked()) {
+        textColor = Qt::black;
     }
     logText->setTextColor(textColor);
     logText->append(qs);
