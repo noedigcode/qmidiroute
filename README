@@ -1,3 +1,8 @@
+QMidiRoute fork to add a few useful things
+2024 Gideon van der Kolf
+
+Original copyright notice:
+
 --------------------------------------------------------------------------
 QMidiRoute (C) 2003 by Matthias Nagorni
 Qt4-port 2009 by Frank Kober
@@ -19,22 +24,49 @@ QMidiRoute can be started using the following options:
    -c <alsaClientName>       ALSA client name
 
 
-Installation
--------------
-qmidiroute uses autoconf/automake as build system. For short
+Requirements
+------------
 
-  ./configure
-  make
-  make install
+Packages required for building from source on Ubuntu 22.04:
 
-does the trick. Please refer to the INSTALL file for more information.
+- autoconf
+- libasound2-dev
+- qtbase5-dev
+- qtbase5-dev-tools
 
 
-CVS check out
--------------
-If you start with a fresh CVS checkout, please first apply
+After fresh Git clone
+---------------------
 
-  autoreconf -i
+After a fresh Git clone on your system, first run:
 
-to get a proper configure script. For more instructions about compiling
-and installing this application please refer to the INSTALL file.
+autoreconf -i
+
+
+Building
+--------
+
+If Qt5 is not specified, it will try to use Qt4.
+
+It is useful to create a build directory and run the build commands from
+there so the source directories are not cluttered with build files.
+
+mkdir build
+cd build
+
+./configure --enable-qt5
+make
+
+The built binary should be under src/qmidiroute
+
+If using a separate build directory, translations may fail. If you require this,
+copy src/translations to build/src/translations before running make.
+
+Finally, you can install QMidiRoute system-wide with
+
+sudo make install
+
+
+For more instructions about compiling and installing this application please
+refer to the INSTALL file.
+
