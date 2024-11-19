@@ -1,12 +1,14 @@
 QMidiRoute fork to add a few useful things
 2024 Gideon van der Kolf
 
+See the ChangeLog file for a list of additions provided by this fork on top of
+v0.4.0.
+
 Original copyright notice:
 
 --------------------------------------------------------------------------
 QMidiRoute (C) 2003 by Matthias Nagorni
 Qt4-port 2009 by Frank Kober
-ALSA client name setting added 2016 by Gideon van der Kolf
 QMidiRoute is released under GNU General Public License (refer to LICENSE file)
 --------------------------------------------------------------------------
 

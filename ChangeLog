@@ -1,3 +1,13 @@
++++ Fork by Gideon van der Kolf +++
+
+2024 Gideon van der Kolf <noedigcode@gmail.com>
+    * Make console output bold and text color black by default with a checkbox
+      to enable color (as per user request on GitHub)
+
+2016 Gideon van der Kolf <noedigcode@gmail.com>
+    * Add ALSA client name command-line option
+
+
 +++ Release 0.4.0 (2016-01-24) +++
 
 2015-12-30 12:56  Guido Scholz <guido-scholz@gmx.net>
